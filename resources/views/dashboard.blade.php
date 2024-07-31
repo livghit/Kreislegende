@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg grid grid-cols-2 md:grid-cols-4 p-5 gap-5">
-                <x-dashboard-card class="flex flex-col justify-between">
+                <x-dashboard-card class="flex flex-col justify-between col-span-2 md:col-span-1">
                     <div class="flex gap-2">
                         <i class="ph ph-sneaker-move text-2xl"></i>
                         <p class="text-xl">Teilnahme Training</p>
@@ -18,8 +18,9 @@
                     <div class="mt-2 ">
                         <div class="flex flex-col gap-5">
                             <div>
-                                <p class="bg-green-500 text-white max-w-16 rounded text-center text-sm font-bold">
-                                    Present</p>
+                                <p class="bg-green-500 text-white  rounded-full text-center text-sm font-bold">
+                                    Anwesend</p>
+
                                 <div class="grid grid-cols-2 mt-2">
                                     @php
                                         $present = collect(['Liviu', 'Kerim', 'Eddy', 'Furkan']);
@@ -39,8 +40,8 @@
                                 </div>
                             </div>
                             <div>
-                                <p class="bg-red-500 text-white max-w-16 rounded text-center text-sm font-bold">
-                                    Absent
+                                <p class="bg-red-500 text-white rounded-full text-center text-sm font-bold">
+                                    Abwesend
                                 </p>
                                 <div class="grid grid-cols-2 mt-2">
                                     @foreach ($absent as $a)
@@ -54,19 +55,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex gap-5 justify-end">
-                        <x-button class="flex">
-                            <span>Nehme teil</span>
-                            <i class="ph ph-check-circle text-xl"></i>
+                    <div class="mt-10 flex gap-5 justify-between text-sm">
+                        <x-button>
+                            <span>Komme</span>
                         </x-button>
-                        <x-button class="bg-red-500 hover:bg-red-400 flex ">
-                            <span>Nehme nicht teil</span>
-                            <i class="ph ph-x-circle text-xl"></i>
+                        <x-button class="bg-red-500 hover:bg-red-400 ">
+                            <span>Komme nicht</span>
                         </x-button>
                     </div>
                 </x-dashboard-card>
 
-                <x-dashboard-card class="flex flex-col justify-between">
+                <x-dashboard-card class="flex flex-col justify-between col-span-2 md:col-span-1">
                     <div class="flex gap-2 ">
                         <i class="ph ph-sneaker-move text-2xl"></i>
                         <p class="text-xl">Teilname Training</p>
@@ -76,11 +75,10 @@
                     <div class="mt-2">
                         <div class="flex flex-col gap-5">
                             <div>
-                                <p class="bg-green-500 text-white max-w-16 rounded text-center text-sm font-bold">
-                                    Present</p>
+                                <p class="bg-green-500 text-white rounded-full text-center text-sm font-bold">
+                                    Anwesend</p>
                                 <div class="grid grid-cols-2 mt-2">
                                     @php
-                                        $present->push('Semih');
                                     @endphp
                                     @foreach ($present as $p)
                                         <div class="flex">
@@ -96,7 +94,8 @@
                                 </div>
                             </div>
                             <div>
-                                <p class="bg-red-500 text-white max-w-16 rounded text-center text-sm font-bold">Absent
+                                <p class="bg-red-500 text-white rounded-full text-center text-sm font-bold">
+                                    Abwesend
                                 </p>
                                 <div class="grid grid-cols-2 mt-2">
                                     @foreach (collect(['Denis', 'Emre']) as $a)
@@ -109,14 +108,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-10 flex justify-end gap-5">
-                        <x-button class="flex">
-                            <span>Nehme teil</span>
-                            <i class="ph ph-check-circle text-xl"></i>
+                    <div class="mt-10 flex justify-between text-sm">
+                        <x-button>
+                            <span>Komme</span>
                         </x-button>
-                        <x-button class="bg-red-500 hover:bg-red-400 flex ">
-                            <span>Nehme nicht teil</span>
-                            <i class="ph ph-x-circle text-xl"></i>
+                        <x-button class="bg-red-500 hover:bg-red-400">
+                            <span>Komme nicht</span>
                         </x-button>
                     </div>
                 </x-dashboard-card>
@@ -129,16 +126,9 @@
                         <p class="text-gray-400 mt-1">at the moment</p>
                     </div>
 
-                    <div class="w-full flex justify-between p-5">
-                        <p>Spieler</p>
-                        <p>Verletzung</p>
-                        <p>Dauer</p>
-                    </div>
-                    <div class="mt-5 flex flex-col gap-5">
-                        <x-injured-player-avatar initials='LG' injury='Kreuzbandriss' term='2 Monate'
-                            name="Liviu Ghita" />
-                        <x-injured-player-avatar initials='KO' injury='Sprunggelenk' term='2 Wochen'
-                            name="Kerim Olgün" />
+                    <div class="mt-5 flex gap-5">
+                        <x-hover-card initials='LG' injury='Kreuzbandriss' duration='2 Monate' name="Liviu Ghita" />
+                        <x-hover-card initials='KO' injury='Sprunggelenk' duration='2 Wochen' name="Kerim Olgün" />
                     </div>
                 </x-dashboard-card>
 
