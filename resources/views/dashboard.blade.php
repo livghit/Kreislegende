@@ -118,20 +118,6 @@
                     </div>
                 </x-dashboard-card>
 
-
-                <x-dashboard-card class="col-span-2">
-                    <div class="flex gap-2 mb-5">
-                        <i class="ph ph-first-aid-kit text-2xl"></i>
-                        <p class="text-xl">Injured Players</p>
-                        <p class="text-gray-400 mt-1">at the moment</p>
-                    </div>
-
-                    <div class="mt-5 flex gap-5">
-                        <x-hover-card initials='LG' injury='Kreuzbandriss' duration='2 Monate' name="Liviu Ghita" />
-                        <x-hover-card initials='KO' injury='Sprunggelenk' duration='2 Wochen' name="Kerim Olgün" />
-                    </div>
-                </x-dashboard-card>
-
                 <x-dashboard-card class="col-span-2">
                     <p class="text-xl">Kader</p>
                     <p class="text-gray-400">für nächstes Spiel</p>
@@ -168,13 +154,45 @@
                     <p class="text-xl">Teamrollen</p>
                     <p class="text-gray-400">Key Rollen</p>
 
-                    <div class="grid grid-cols-2 gap-5 justify-center">
+                    <div class="grid grid-cols-3 gap-5 justify-center">
                         <x-team-role spieler="Liviu Ghita" role="Trikodienst" icon="ph ph-t-shirt" />
                         <x-team-role spieler="Kerim Olgun" role="Pre Matcher" icon="ph ph-airplane-takeoff" />
                         <x-team-role spieler="Furkan Özgun" role="Kapitän" icon="ph ph-copyright" />
                         <x-team-role spieler="Can" role="Trainer" icon="ph ph-brain" />
+                        <x-team-role spieler="Kerim Olgun" role="After Matcher" icon="ph ph-airplane-landing" />
+                        <button onclick="alert('busch')">
+                            <x-team-role spieler="hinzufügen" role="Rolle" icon="ph ph-plus-circle" />
+                        </button>
                     </div>
                 </x-dashboard-card>
+
+                <x-dashboard-card class="col-span-1">
+                    <div class="flex gap-2 mb-5">
+                        <i class="ph ph-first-aid-kit text-2xl"></i>
+                        <p class="text-xl">Injured Players</p>
+                        <p class="text-gray-400 mt-1">at the moment</p>
+                    </div>
+
+                    <div class="mt-5 flex gap-5">
+                        <x-hover-card initials='LG' motiv='Verletzt Kreuzbandriss' duration='2 Monate'
+                            name="Liviu Ghita" />
+                        <x-hover-card initials='KO' motiv='Verletzt Sprunggelenk' duration='2 Wochen'
+                            name="Kerim Olgün" />
+                    </div>
+                </x-dashboard-card>
+                <x-dashboard-card class="col-span-1">
+                    <div class="flex gap-2 mb-5">
+                        <i class="ph ph-hand-waving text-2xl"></i>
+                        <p class="text-xl">Absent Players</p>
+                        <p class="text-gray-400 mt-1">at the moment</p>
+                    </div>
+
+                    <div class="mt-5 flex gap-5">
+                        <x-hover-card initials='ME' motiv='Urlaub' duration='2 Monate' name="Mert Eidechs" />
+                        <x-hover-card initials='FÖ' motiv='Urlaub' duration='4 Wochen' name="Furkan Özdem" />
+                    </div>
+                </x-dashboard-card>
+
 
             </div>
         </div>

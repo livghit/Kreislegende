@@ -31,7 +31,20 @@ class TeamPolicy
      */
     public function create(User $user): bool
     {
-        return true;
+        $canCreate = true;
+        $cantCreate = true;
+
+        switch ($user->teamRole($user->currentTeam)) {
+            case 'owner':
+                return $canCreate;
+                break;
+            case 'admin':
+                return $canCreate;
+                break;
+            default:
+                return $cantCreate;
+                break;
+        }
     }
 
     /**

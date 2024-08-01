@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
+                    <a href="{{ url('/') }}">
                         @if (Auth::user()->currentTeam->logo != null)
                             <img src="{{ Auth::user()->currentTeam->logo }}" alt="Invalid Image" class="w-8 h-8" />
                         @else
@@ -19,6 +19,15 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('schedules') }}" :active="request()->routeIs('schedules')">
+                        {{ __('Schedules') }}
+                    </x-nav-link>
+                    @if (Auth::user()->teamRole(Auth::user()->currentTeam)->name == 'Coach')
+                        <x-nav-link href="{{ route('trainer-area') }}" :active="request()->routeIs('trainer-area')">
+                            {{ __('Trainer Area') }}
+                        </x-nav-link>
+                    @endif
+
                 </div>
             </div>
 
@@ -157,6 +166,16 @@
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('schedules') }}" :active="request()->routeIs('schedules')">
+                {{ __('Schedules') }}
+            </x-responsive-nav-link>
+
+            @if (Auth::user()->teamRole(Auth::user()->currentTeam)->name == 'Coach')
+                <x-responsive-nav-link href="{{ route('trainer-area') }}" :active="request()->routeIs('trainer-area')">
+                    {{ __('Trainer Area') }}
+                </x-responsive-nav-link>
+            @endif
+
         </div>
 
         <!-- Responsive Settings Options -->

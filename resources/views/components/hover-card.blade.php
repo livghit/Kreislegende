@@ -1,4 +1,4 @@
-@props(['name', 'initials', 'injury', 'duration'])
+@props(['name', 'initials', 'motiv', 'duration'])
 <div x-data="{
     hoverCardHovered: false,
     hoverCardDelay: 600,
@@ -39,7 +39,7 @@
             </div>
             <div class="relative">
                 <p class="mb-1 font-bold">@ {{ $name }}</p>
-                <p class="mb-1 text-sm text-gray-600">Verletzung - {{ $injury }}</p>
+                <p class="mb-1 text-sm text-gray-600">{{ $motiv }}</p>
                 <p class="flex items-center space-x-1 text-xs text-gray-400">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
