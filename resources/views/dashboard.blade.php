@@ -8,7 +8,7 @@
     <div class="py-12">
         <div class="max-w-8xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg grid grid-cols-2 md:grid-cols-4 p-5 gap-5">
-                <x-dashboard-card class="flex flex-col justify-between col-span-2 md:col-span-1">
+                <x-dashboard-card class="flex flex-col justify-between col-span-2 md:col-span-2">
                     <div class="flex gap-2">
                         <i class="ph ph-sneaker-move text-2xl"></i>
                         <p class="text-xl">Teilnahme Training</p>
@@ -21,7 +21,7 @@
                                 <p class="bg-green-500 text-white  rounded-full text-center text-sm font-bold">
                                     Anwesend</p>
 
-                                <div class="grid grid-cols-2 mt-2">
+                                <div class="grid grid-cols-4 mt-2">
                                     @php
                                         $present = collect(['Liviu', 'Kerim', 'Eddy', 'Furkan']);
                                         $absent = collect(['Kerim C.', 'Halil', 'Yusoufe']);
@@ -43,7 +43,7 @@
                                 <p class="bg-red-500 text-white rounded-full text-center text-sm font-bold">
                                     Abwesend
                                 </p>
-                                <div class="grid grid-cols-2 mt-2">
+                                <div class="grid grid-cols-4 mt-2">
                                     @foreach ($absent as $a)
                                         <div>
                                             <i class="ph ph-x-circle text-red-500 h-5 w-5 text-xl mt-5"></i>
@@ -60,59 +60,6 @@
                             <span>Komme</span>
                         </x-button>
                         <x-button class="bg-red-500 hover:bg-red-400 ">
-                            <span>Komme nicht</span>
-                        </x-button>
-                    </div>
-                </x-dashboard-card>
-
-                <x-dashboard-card class="flex flex-col justify-between col-span-2 md:col-span-1">
-                    <div class="flex gap-2 ">
-                        <i class="ph ph-sneaker-move text-2xl"></i>
-                        <p class="text-xl">Teilname Training</p>
-                    </div>
-                    <p class="text-gray-400 mb-5">für ubernächstes Training</p>
-
-                    <div class="mt-2">
-                        <div class="flex flex-col gap-5">
-                            <div>
-                                <p class="bg-green-500 text-white rounded-full text-center text-sm font-bold">
-                                    Anwesend</p>
-                                <div class="grid grid-cols-2 mt-2">
-                                    @php
-                                    @endphp
-                                    @foreach ($present as $p)
-                                        <div class="flex">
-                                            <svg class="me-1 h-5 w-5 text-green-400" xmlns="http://www.w3.org/2000/svg"
-                                                fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                                stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg>
-                                            <span>{{ $p }}</span>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div>
-                                <p class="bg-red-500 text-white rounded-full text-center text-sm font-bold">
-                                    Abwesend
-                                </p>
-                                <div class="grid grid-cols-2 mt-2">
-                                    @foreach (collect(['Denis', 'Emre']) as $a)
-                                        <div>
-                                            <i class="ph ph-x-circle text-red-500 h-5 w-5 text-xl mt-5"></i>
-                                            <span>{{ $a }}</span>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-10 flex justify-between text-sm">
-                        <x-button>
-                            <span>Komme</span>
-                        </x-button>
-                        <x-button class="bg-red-500 hover:bg-red-400">
                             <span>Komme nicht</span>
                         </x-button>
                     </div>

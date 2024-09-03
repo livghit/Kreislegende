@@ -22,7 +22,7 @@
                     <x-nav-link href="{{ route('schedules') }}" :active="request()->routeIs('schedules')">
                         {{ __('Schedules') }}
                     </x-nav-link>
-                    @if (Auth::user()->teamRole(Auth::user()->currentTeam)->name == 'Coach')
+                    @if (Auth::user()->hasTeamRole(Auth::user()->currentTeam, 'coach'))
                         <x-nav-link href="{{ route('trainer-area') }}" :active="request()->routeIs('trainer-area')">
                             {{ __('Trainer Area') }}
                         </x-nav-link>

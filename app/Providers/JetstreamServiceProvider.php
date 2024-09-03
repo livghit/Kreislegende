@@ -54,8 +54,6 @@ class JetstreamServiceProvider extends ServiceProvider
 
         Jetstream::role('player', 'Player', [
             'read',
-            'create',
-            'update',
         ])->description('Players can only see some things , and update them.');
 
         Jetstream::role('coach', 'Coach', [
